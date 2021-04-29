@@ -1,0 +1,123 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": false,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "bundle": false,
+    "useCompilerModule": false,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": true,
+    "enableEngineNative": false,
+    "useIsolateContext": true,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.15.0",
+  "appid": "wx88e5787cd73d0c87",
+  "projectname": "%E6%98%93%E7%BB%9C%E5%AE%A2%E6%94%AF%E9%83%A8",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "scripts": {},
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": 0,
+          "name": "授权手机号",
+          "pathName": "pages/phone/phone",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 1,
+          "name": "完善信息",
+          "pathName": "pages/setinfo/setinfo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 2,
+          "name": "pages/activityDetail/activityDetail",
+          "pathName": "pages/activityDetail/activityDetail",
+          "query": "activityid=7&share=1",
+          "scene": null
+        },
+        {
+          "id": 3,
+          "name": "多人学习",
+          "pathName": "pages/scanStudy/scanStudy",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 4,
+          "name": "审核",
+          "pathName": "pages/audit/audit",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 5,
+          "name": "pages/addPayment/addPayment",
+          "pathName": "pages/addPayment/addPayment",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/leader/leader",
+          "pathName": "pages/leader/leader",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

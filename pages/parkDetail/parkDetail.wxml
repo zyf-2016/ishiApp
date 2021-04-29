@@ -1,0 +1,41 @@
+<view class="page">
+	<navBar title='活动查看' background='#bd232f' color='#fff' iconTheme='white' back="{{!isShare}}" home="{{isShare}}" bindhome="gohome" bindback="goback"></navBar>
+	<image class="banner" src="{{info.image}}" mode="aspectFill" />
+	<view class="wrapper">
+		<view class="title">{{info.title}}</view>
+		<view class="content-info">
+			<view class="info">
+				<image class="icon-info" src="../../images/icon-menu.png" mode="aspectFill" />
+				<text class="info-text">{{info.time}}</text>
+			</view>
+			<view class="info">
+				<image class="icon-info" src="../../images/icon-clock.png" mode="aspectFill" />
+				<text class="info-text">{{info.day}}</text>
+			</view>
+			<view class="info">
+				<image class="icon-info" src="../../images/icon-address.png" mode="aspectFill" />
+				<text class="info-text">{{info.site}}</text>
+			</view>
+		</view>
+		<view class="main-title">成员签到</view>
+		<view class="list">
+			<view class="list-item" wx:for="{{info.member}}" wx:key="index">
+				<text class="list-name">{{item.name}}</text>
+				<button class="list-btn" wx:if="{{item.sign == 0}}" disabled="{{true}}" bindtap="sign">未签到</button>
+				<button class="list-btn" disabled="{{true}}" wx:else>已签到</button>
+			</view>
+		</view>
+
+		<view class="main-title" style="margin-bottom: 40rpx">学习心得</view>
+		<view class="comment">
+			<view class="flex-start comment-info">
+				<image class="comment-avatar" src="../../images/{{info.filename}}.jpg" mode="aspectFill"></image>
+				<text class="comment-name">{{info.member[info.index].name}}</text>
+				<text class="comment-time">{{info.time}}</text>
+			</view>
+			<view class="comment-content">
+				<view wx:for="{{info.comment}}" wx:key="index">{{item}}</view>
+			</view>
+		</view>
+	</view>
+</view>

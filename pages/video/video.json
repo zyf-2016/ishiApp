@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-empty": "@vant/weapp/empty/index"
+  },
+  "navigationBarTitleText": "宣誓留念",
+  "navigationBarBackgroundColor": "#000"
+}

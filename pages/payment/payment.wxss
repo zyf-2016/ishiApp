@@ -1,0 +1,131 @@
+/* pages/payment/payment.wxss */
+.page {
+	height: 100vh;
+	background: #f2f3f4;
+}
+.nav {
+	height: 0;
+}
+.header {
+	width: 100%;
+	height: 555rpx;
+	background: url(https://api.shi1.cn/open/oss/bg.jpg) no-repeat left top;
+	background-size: 100% auto;
+	overflow: hidden;
+	color: #fff;
+	position: relative;
+}
+.header-content {
+	width: 100%;
+	text-align: center;
+	line-height: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	position: absolute;
+	left: 50%;
+	/* bottom: 50rpx; */
+	top: 260rpx;
+	transform: translateX(-50%);
+}
+.header-name {
+	font-size: 34rpx;
+}
+.header-progress {
+	font-size: 70rpx;
+	font-weight: bold;
+	margin: 25rpx 0 40rpx;
+}
+.header-text {
+	margin-bottom: 10rpx;
+	font-size: 24rpx;
+}
+.tab-list {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-sizing: border-box;
+	height: 90rpx;
+	padding: 20rpx 100rpx 0;
+	background: #f2f3f4;
+	border-bottom: 1rpx solid #d1d2d2;
+}
+.tab-item {
+	height: 70rpx;
+	line-height: 70rpx;
+	color: #cacaca;
+	font-size: 28rpx;
+	position: relative;
+}
+.tab-item.active {
+	color: #666666;
+}
+.tab-item.active:after {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 4rpx;
+	background: #666;
+	position: absolute;
+	left: 0;
+	bottom: -4rpx;
+}
+.member-list {
+	padding: 25rpx 30rpx;
+	height: calc(100vh - 645rpx);
+	box-sizing: border-box;
+	overflow-y: auto;
+}
+.list-item {
+	width: 100%;
+	height: 160rpx;
+	background: #fff;
+	padding: 0 40rpx;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	border-radius: 30rpx;
+	box-sizing: border-box;
+	box-shadow: 0 0 4rpx  rgba(0,0,0,.7);
+}
+.list-item + .list-item {
+	margin-top: 20rpx;
+}
+.list-avatar {
+	width: 100rpx;
+	height: 100rpx;
+	border-radius: 50%;
+	margin-right: 30rpx;
+}
+.list-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+.list-name {
+	font-size: 34rpx;
+	color: #000;
+}
+.list-date {
+	margin-top: 20rpx;
+	font-size: 18rpx;
+	color: #b1b1b1;
+}
+.list-state {
+	flex: 1;
+	text-align: right;
+	color: #39b54a;
+	font-size: 24rpx;
+}
+.list-state.error {
+	color: #ed1c24;
+}
+.list-state.info {
+	color: #999999;
+}
+.draw-area {
+	width: 100%;
+	height: 100%;
+}

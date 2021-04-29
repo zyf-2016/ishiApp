@@ -1,0 +1,161 @@
+page {
+	padding: 40rpx 50rpx 180rpx;
+	box-sizing: border-box;
+}
+.page {
+	width: 100%;
+	height: 100%;
+	background: #fff;
+}
+.banner {
+	display: block;
+	width: 100%;
+	height: 360rpx;
+}
+.title {
+	margin: 50rpx 0;
+	color: #4d4d4d;
+	font-size: 30rpx;
+	font-weight: bold;
+}
+.info {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin-bottom: 35rpx;
+}
+.icon-info {
+	width: 40rpx;
+	height: 40rpx;
+}
+.info-text {
+	color: #b1b1b1;
+	font-size: 24rpx;
+	margin-left: 40rpx;
+}
+.wrapper {
+	padding: 0 16rpx;
+}
+.main-title {
+	font-size: 30rpx;
+	color: #000;
+	padding-top: 40rpx;
+}
+.list {
+	margin-top: 55rpx;
+	padding: 0 20rpx;
+}
+.list-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.list-item + .list-item {
+	margin-top: 55rpx;
+}
+.list-name {
+	font-size: 24rpx;
+	color: #b1b1b1;
+}
+.list-btn {
+	width: 130rpx;
+	height: 40rpx;
+	line-height: 40rpx;
+	border: 1rpx solid #bc1e2d;
+	color: #fff;
+	font-size: 24rpx;
+	background: #bc1e2d;
+	border-radius: 20rpx;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+.list-btn[disabled] {
+	background: #f0f0f0;
+	color: #979797;
+	border: 1rpx solid #979797;
+}
+
+.footer {
+	width: 100%;
+	position: fixed;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	left: 0;
+	bottom: 0;
+	background: #fff;
+	padding: 30rpx 60rpx;
+}
+.del {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-right: 50rpx;
+}
+.icon-del {
+	width: 49rpx;
+	height: 46rpx;
+}
+.del-text {
+	color: #b1b1b1;
+	font-size: 24rpx;
+}
+.btn-share {
+	flex: 1;
+	height: 80rpx;
+	line-height: 80rpx;
+	background: #bc1e2d;
+	color: #fff;
+	box-sizing: 8rpx;
+}
+
+.layer {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	z-index: 9;
+	left: 0;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(0,0,0,.5);
+}
+.content {
+	width: 550rpx;
+	background: #fff;
+	border-radius: 50rpx;
+	overflow: hidden;
+}
+.msg {
+	height: 200rpx;
+	line-height: 200rpx;
+	text-align: center;
+	color: #bc1e2d;
+	font-size: 36rpx;
+	font-weight: bold;
+}
+.btn-wrap {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 32rpx;
+}
+.button {
+	width: 50%;
+	height: 100rpx;
+	line-height: 100rpx;
+	box-sizing: border-box;
+	color: #bc1e2d;
+	border-top: 1rpx solid #bc1e2d;
+	border-radius: 0;
+}
+.button:after {
+	border-radius: 0;
+}
+.yes {
+	background: #bc1e2d;
+	color: #fff;
+}

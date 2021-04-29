@@ -1,0 +1,24 @@
+<!--pages/member/member.wxml-->
+<view class="page">
+	<navBar title='成员选择' background='#bd232f' color='#fff' iconTheme='white' back="{{true}}" bindback="goback"></navBar>
+	<view class="search-box">
+		<view class="search">
+			<image src="../../images/search.png" mode="aspectFill" style="width:40rpx;height:40rpx;" />
+			<input type="text" placeholder-class="place-holder" placeholder="搜索" bindinput="search" />
+		</view>
+	</view>
+	<van-index-bar highlight-color="#c6161d" wx:if="{{employeeNameList}}">
+		<view wx:for="{{employeeNameList}}" wx:for-index="key" wx:for-item="value" wx:key="key">
+			<van-index-anchor index="{{key}}"  wx:if="{{value.length}}"></van-index-anchor>
+			<!-- <van-cell title="{{item.name}}" wx:for="{{value}}"  wx:if="{{value.length}}" /> -->
+			<van-cell wx:for="{{value}}"  wx:if="{{value.length}}" wx:key="index" data-keyid="{{item.keyid}}" data-openid="{{item.openid}}" data-name="{{item.name}}" bindtap="handleClick">
+				<view slot="title" class="van-cell-inline">
+					<image class="van-avatar" src="{{item.avatarurl}}" mode="aspectFill" />
+					<text class="van-cell-text">{{item.name}}</text>
+				</view>
+			</van-cell>
+		</view>
+	</van-index-bar>
+	<van-empty description="空空如也~" wx:if="{{!employeeNameList}}" />
+	<view class="count" wx:if="{{memberCount > 0}}">共{{memberCount}}名成员</view>
+</view>

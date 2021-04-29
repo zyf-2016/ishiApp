@@ -1,0 +1,71 @@
+<view style="height:100vh">
+	<view class="nav">
+        <navBar title='党务' background='rgba(0,0,0,0)' color='#fff' iconTheme='white'></navBar>
+    </view>
+	<view class="top">
+		<text class="username" wx:if="{{username}}">Hello！{{username}}</text>
+		<view class="username" wx:else>Hello！<open-data type="userNickName"></open-data></view>
+	</view>
+	<view class="content">
+		<view class="title flex-start">
+			<image class="icon-msg" src="../../images/icon-voice.png" mode="aspectFill" />
+			<text class="title-text">党建公告</text>
+		</view>
+		<view class="msg-list flex-between">
+			<view class="msg-item">
+				<view class="msg-title">党费催缴公告</view>
+				<view class="msg-content">
+					<view class="msg-info">2月党费催缴时间为：</view>
+					<view class="msg-info">2021/2/1——2021/2/15</view>
+				</view>
+			</view>
+			<view class="msg-item">
+				<view class="msg-title">支部活动公告</view>
+				<view class="msg-content">
+					<view class="msg-info">时间:2021/2/12</view>
+					<view class="msg-info">地点:大会议室</view>
+					<view class="msg-info">活动内容:党建宣誓</view>
+				</view>
+			</view>
+		</view>
+		<view class="activity-area" wx:if="{{role == 1}}">
+				<view class="activity-title">组织管理</view>
+				<view class="activity-list flex-between">
+					<view class="activity-item flex-col" data-path="/pages/member/member" bindtap="navigate">
+						<image class="activity-icon" src="https://api.shi1.cn/open/oss/icon-tree.png" mode="widthFix" />
+						<text class="activity-type">成员管理</text>
+						<view class="activity-count" wx:if="{{count > 0}}">{{count}}</view>
+					</view>
+					<view class="activity-item flex-col" data-path="/pages/payment/payment" bindtap="navigate">
+						<image class="activity-icon" src="https://api.shi1.cn/open/oss/icon-money.png" mode="widthFix" />
+						<text class="activity-type">党费管理</text>
+					</view>
+					<view class="activity-item flex-col" hoverClass="none" data-path="/pages/activityList/activityList" bindtap="navigate">
+						<image class="activity-icon" src="https://api.shi1.cn/open/oss/icon-act.png" mode="widthFix" />
+						<text class="activity-type">活动管理</text>
+					</view>
+				</view>
+			</view>
+		<view class="activity-area">
+			<view class="activity-title">学习中心</view>
+				<view class="activity-list flex-between">
+					<view class="activity-item flex-col" data-path="/pages/xuexi/myhome" bindtap="navigate">
+						<image class="activity-icon" src="https://api.shi1.cn/open/oss/icon-book.png" mode="widthFix" />
+						<text class="activity-type">每日学习</text>
+					</view>
+					<view class="activity-item flex-col" data-path="/pages/park/park" bindtap="navigate">
+						<image class="activity-icon" src="../../images/icon-park.png" mode="widthFix" />
+						<text class="activity-type">三会一课</text>
+					</view>
+					<view class="activity-item flex-col" bindtap="scan">
+						<image class="activity-icon" src="https://api.shi1.cn/open/oss/icon-user.png" mode="widthFix" />
+						<text class="activity-type">多人学习</text>
+					</view>
+					<!-- <view class="activity-item flex-col" bindtap="shezhi">
+						<image class="activity-icon" src="https://api.shi1.cn/open/oss/icon-list.png" mode="widthFix" />
+						<text class="activity-type">历史成绩</text>
+					</view> -->
+				</view>
+			</view>
+	</view>
+</view>

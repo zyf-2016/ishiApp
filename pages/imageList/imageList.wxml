@@ -1,0 +1,16 @@
+<view class="page">
+	<navBar title='党建留念' background='#bd232f' color='#fff' iconTheme='white' back="{{true}}" bindback="goback"></navBar>
+	<view class="list" wx:if="{{list.length}}">
+		<view class="item" wx:for="{{list}}" data-url="{{item.fileurl}}" bindtap="goToDetail">
+			<image class="thumb" src="{{item.fileurl}}" mode="aspectFill" />
+			<view class="info">
+				<view class="date">
+					<text class="text">{{item.week}}</text>
+					<text class="text">{{item.date}}</text>
+				</view>
+				<view class="title">{{item.title}}</view>
+			</view>
+		</view>
+	</view>
+	<van-empty description="空空如也~" wx:if="{{!list.length}}" />
+</view>

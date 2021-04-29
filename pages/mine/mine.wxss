@@ -1,0 +1,156 @@
+.wrap {
+	width: 100%;
+	padding: 0 30rpx;
+	box-sizing: border-box;
+	height: 320rpx;
+}
+.userinfo {
+	align-items: flex-start;
+	color: #fff;
+	flex: 1;
+}
+.avatar {
+	width: 148rpx;
+	height: 148rpx;
+	border-radius: 50%;
+	margin-right: 34rpx;
+}
+.nickname {
+	font-size: 54rpx;
+}
+.detault-avatar {
+	width: 148rpx;
+	height: 148rpx;
+	border-radius: 50%;
+	margin-right: 34rpx;
+	overflow: hidden;
+}
+.state {
+	font-size: 24rpx;
+	margin-top: 10rpx;
+}
+.info-btn {
+	display: block;
+	width: 212rpx;
+	margin: 30rpx auto 0;
+}
+.body {
+	position: relative;
+	width: 100%;
+	background: #f2f3f4;
+}
+.content {
+	width: 650rpx;
+	position: absolute;
+	z-index: 9;
+	top: -56rpx;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.box {
+	background: #fff;
+	border-radius: 14rpx;
+	box-shadow: 0 0 8px rgba(178, 178, 178, 0.3);
+}
+.box + .box {
+	margin-top: 30rpx;
+}
+.title {
+	font-size: 35rpx;
+	color: #000;
+	padding: 20rpx 60rpx 0 30rpx;
+	font-weight: 500;
+}
+.item-wrap {
+	padding: 30rpx 88rpx;
+}
+.item-icon {
+	width: 41rpx;
+	height: 41rpx;
+}
+.item-text {
+	font-size: 30rpx;
+	color: #000;
+	margin-top: 10rpx;
+	font-weight: 500;
+}
+.all {
+	color: #b1b1b1;
+	font-size: 30rpx;
+}
+.detail {
+	padding: 42rpx 0 30rpx;
+}
+/* .detail-left {
+	width: 250rpx;
+	height: 138rpx;
+} */
+/* .detail-right {
+	align-items: flex-start;
+	padding-right: 60rpx;
+	padding-left: 74rpx;
+	flex: 1;
+	box-sizing: border-box;
+} */
+.detail-info {
+	width: 100%;
+	font-size: 30rpx;
+	color: #b1b1b1;
+	line-height: 1;
+}
+.fee {
+	font-size: 28rpx;
+	color: #333;
+}
+.success {
+	color: #22b373;
+	font-size: 30rpx;
+}
+.success + .success {
+	margin-top: 20rpx;
+}
+.error {
+	color: #ed1c24;
+	font-size: 30rpx;
+}
+.text-left {
+	font-size: 30rpx;
+}
+.text-right {
+	font-size: 30rpx;
+	color: #000;
+	margin-top: 20rpx;
+}
+.info {
+	color: #999999;
+}
+.text-error {
+	color: #c6161d;
+}
+.text-success {
+	color: #22b373;
+}
+/* .list-item {
+	padding: 0 50rpx;
+	height: 88rpx;
+}
+.list-item + .list-item {
+	border-top: 1rpx solid #f0f0f0;
+}
+.list-link {
+	height: 100%;
+}
+.list-icon {
+	width: 36rpx;
+	height: 36rpx;
+	margin-right: 28rpx;
+}
+.list-text {
+	font-size: 30rpx;
+	color: #333;
+}
+.list-arrow {
+	color: #cacaca;
+	flex: 1;
+	text-align: right;
+} */

@@ -1,0 +1,21 @@
+<view class="myhome-setinfo-content" style="padding-top: {{height}}">
+    <view class="nav">
+        <navBar title='完善信息' background='rgba(0,0,0,0)' color='#fff' iconTheme='white' back="{{true}}" bindback="goback"></navBar>
+    </view>
+    <view class="my-welcome-block">
+        <view class="my-loading-block" wx:if="{{isInit}}">
+            <image src="../../images/my-loding.gif"></image>
+            <view>加载中...</view>
+        </view> 
+        <view class="my-welcome-get" wx:if="{{!isInit}}">
+            <view class="my-list-none" wx:if="{{!isInit&&!(list.length>0)}}">
+                <image class="none-pic" mode="widthFix" src="../../images/list-none-pic.png"></image>
+        请授权获取您的手机号码
+        <view>授权后可正常访问</view>
+            </view>
+            <view class="btn-default-color get-btn">
+                <button bindgetphonenumber="getPhoneNumber" openType="getPhoneNumber">授权手机号码</button>
+            </view>
+        </view>
+    </view>
+</view>

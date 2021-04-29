@@ -1,0 +1,60 @@
+<view class="my-loading-block" wx:if="{{isInit}}">
+    <image src="../../images/my-loding.gif"></image>
+</view>
+<swiper bindchange="mychange" class="bjj" current="{{mycurrent}}" wx:if="{{!isInit}}">
+    <swiper-item catchtouchmove="catchTouchMove" class="bjj" current="{{mycurrent}}" wx:for="{{listDetail}}" wx:key="{{index}}">
+        <scroll-view scrollY class="my-detail-block">
+            <view class="my-detail-padding">
+                <view class="my-detail-item wyd">
+                    <view class="right-text">
+                        剩余
+                        <text style="color:#ff0000;">{{listNuber[index].second}}</text>
+                        秒
+                    </view>
+                    <view class="right-text" style="text-align: right;">
+                        第
+                        <text style="color:#ff0000;">{{index+1}}</text>
+                        题 / 共{{listDetail.length}}题
+                    </view>
+                    <view class="item-text">{{item.question}}</view>
+                    <view class="item-choose-block">
+                        <view bindtap="{{!listNuber[index].enddati?'goChoose':'shezhi'}}" 
+                        class="item-choose {{listNuber[index].choose==itemIndex+1&&listNuber[index].duicuo==1?'item-active':''}} {{listNuber[index].choose==itemIndex+1&&listNuber[index].duicuo==0?'item-activea':''}}"
+                         data-fjnum="{{index}}" data-num="{{itemIndex+1}}" data-answer="{{item.rightanswer}}" wx:for="{{item.items}}" wx:for-index="itemIndex" wx:for-item="itemName" wx:key="{{itemIndex}}" wx:if="{{itemName}}">
+                            {{itemName}}
+                            <view class="item-type" wx:if="{{itemIndex==0 && itemName}}">
+                                <image class="banner-bg" mode="widthFix" src="../../images/icon-01.png" style="float: LEFT;width: 28px; height:28px;" mode="widthFix"></image>
+                            </view>
+                            <view class="item-type" wx:if="{{itemIndex==1 && itemName}}">
+                                <image class="banner-bg" mode="widthFix" src="../../images/icon-02.png" style="float: LEFT;width: 28px; height:28px;" mode="widthFix"></image>
+                            </view>
+                            <view class="item-type" wx:if="{{itemIndex==2 && itemName}}">
+                                <image class="banner-bg" mode="widthFix" src="../../images/icon-03.png" style="float: LEFT;width: 28px; height:28px;" mode="widthFix"></image>
+                            </view>
+                            <view class="item-type" wx:if="{{itemIndex==3 && itemName}}">
+                                <image class="banner-bg" mode="widthFix" src="../../images/icon-04.png" style="float: LEFT;width: 28px; height:28px;" mode="widthFix"></image>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="my-detail-explain" wx:if='{{listNuber[index].enddati}}'>
+                        <view class="title-block">答案解析</view>
+                            <view class="text-block">你的答案：{{uanswer}}</view>
+                            <view class="text-block">正确答案：{{item.rightanswer}}</view>
+                            <view class="text-block">{{item.explain}}</view>
+                    </view>
+                </view>
+                <view style="height:50px;"></view>
+            </view>
+        </scroll-view>
+    </swiper-item>
+</swiper>
+<view class="btn-default-colorv my-list-detail-submit">
+    <view bindtap="{{listNuber[index].choose!=''?'goDown':'shezhi1'}}" wx:if="{{mycurrentCopy+1<listDetail.length}}">
+        下一题
+    </view>
+    <view wx:else>
+        <view class="">
+            <button bindtap="{{listNuber[index].choose!=''?'answerLogin':'shezhi1'}}" style="width: 100%; color:#fff">提交</button>
+        </view>
+    </view>
+</view>

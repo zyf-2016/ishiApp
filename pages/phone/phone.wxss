@@ -1,0 +1,68 @@
+page {
+    height: 100%;
+    background: #fff;
+}
+
+.myhome-setinfo-content {
+    height: 100%; background-image: url(https://api.shi1.cn/open/oss/bj.png); 
+    background-size: 100%; 
+    background-position:top center;
+    background-repeat:no-repeat;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+
+.btn-default-color button {
+    position: relative;
+    background: linear-gradient(to right,#c52f38,#d56056);
+
+    color: #fff;
+    margin: 0;
+    height: 42px;
+    box-shadow: none;
+    border-radius: 42px; line-height: 42px;
+    border: none;
+}
+
+.btn-default-color .button-hover {
+    background: linear-gradient(to right,#c52f38,#d56056);
+}
+
+.btn-lan-color button {
+    position: relative;
+    background: linear-gradient(to right,#44bcfe,#5999ff);
+    color: #fff;
+    margin: 0;
+    height: 49px;
+    box-shadow: none;
+    border-radius: 49px;
+}
+
+
+.my-welcome-block {
+    height: 100%;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(213,220,227,0.5);
+    border-radius: 4px;
+}
+
+.my-welcome-get .get-text {
+    text-align: center;
+    font-size: 14px;
+    line-height: 28px;
+}
+
+.my-welcome-get .get-btn {
+    width: 50%;
+    margin: 50px auto 0;
+}
+
+.my-welcome-block .my-loading-block {
+    padding-top: 150px;
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+    line-height: 68px;
+}

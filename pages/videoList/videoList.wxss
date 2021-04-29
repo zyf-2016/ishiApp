@@ -1,0 +1,62 @@
+/* pages/video/video.wxss */
+page {
+	background: #f2f3f4;
+}
+.page {
+	padding: 35rpx 35rpx 0;
+}
+.list {
+	background: #fff;
+	margin-bottom: 35rpx;
+}
+.info {
+	padding: 0 30rpx;
+}
+.title {
+	font-size: 30rpx;
+	color: #666;
+	height: 60rpx;
+	line-height: 60rpx;
+}
+.date {
+	padding-bottom: 30rpx;
+}
+.text {
+	color: #b1b1b1;
+	font-size: 24rpx;
+}
+.text + .text {
+	margin-left: 30rpx;
+}
+.video {
+	width: 100%;
+}
+.video-box {
+	position: relative;
+}
+.icon-play {
+	width: 76rpx;
+	height: 76rpx;
+	position: absolute;
+	z-index: 9;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.video-layer {
+	background: #000;
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	padding: 0 20rpx;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	z-index: 10;
+}
+
+.empty {
+	width: 554rpx;
+	height: 182rpx;
+}

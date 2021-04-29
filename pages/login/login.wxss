@@ -1,0 +1,41 @@
+page {
+    height: 100%;
+    background: #f7f7f7;
+}
+
+.my-welcome-content {
+    height: 100%;
+    background-image: url(https://api.shi1.cn/open/oss/bg.jpg);
+    background-size: cover;
+    background-position:left top; 
+    background-repeat:no-repeat;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.my-welcome-block {
+    height: 100%;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(213,220,227,0.5);
+    border-radius: 4px;
+}
+
+.my-welcome-get .get-text {
+    text-align: center;
+    font-size: 14px;
+    line-height: 28px;
+}
+
+.my-welcome-get .get-btn {
+    width: 50%;
+    margin: 50px auto 0;
+}
+
+.my-welcome-block .my-loading-block {
+    padding-top: 150px;
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+    line-height: 68px;
+}

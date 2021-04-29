@@ -1,0 +1,59 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/phone/phone",
+    "pages/mine/mine",
+    "pages/audit/audit",
+    "pages/member/member",
+    "pages/list-detail-result/list-detail-result",
+    "pages/setinfo/setinfo",
+    "pages/videoList/videoList",
+    "pages/video/video",
+    "pages/sign/sign",
+    "pages/imageList/imageList",
+    "pages/image/image",
+    "pages/activityList/activityList",
+    "pages/publish/publish",
+    "pages/activityDetail/activityDetail",
+    "pages/payment/payment",
+    "pages/setPayment/setPayment",
+    "pages/addPayment/addPayment",
+    "pages/xuexi/myhome",
+    "pages/list-detail/list-detail",
+    "pages/scanStudy/scanStudy",
+    "pages/park/park",
+    "pages/parkDetail/parkDetail",
+    "pages/leader/leader",
+    "pages/memberList/memberList"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#bd232f",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {
+    "navBar": "/components/navBar/navBar"
+  },
+  "tabBar": {
+    "color": "#b3b3b3",
+    "selectedColor": "#bf1e2e",
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "text": "党务",
+        "pagePath": "pages/index/index",
+        "iconPath": "images/task.png",
+        "selectedIconPath": "images/task_active.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/mine/mine",
+        "iconPath": "images/mine.png",
+        "selectedIconPath": "images/mine_active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

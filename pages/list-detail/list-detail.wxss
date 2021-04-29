@@ -1,0 +1,39 @@
+page {
+    height: 100%;
+    background: #f7f7f7;
+    box-sizing: border-box;
+}
+
+.btn-default-color button {
+    position: relative;
+   
+    margin: 0;
+  
+    box-shadow: none;
+ 
+    border: none;
+}
+button::after {
+    border: none;
+    
+    }
+    
+    button {
+    background-color: transparent;
+    
+    padding-left: 0;
+    
+    padding-right: 0;
+    
+    line-height:inherit;
+    
+    }
+    
+    button {
+    border-radius:0; position: relative; z-index: 99;
+    
+    }
+.bjj { width: 100%; float: left; background-image: url(https://api.shi1.cn/open/oss/bja.png); background-size: 100%; background-position:center center; background-repeat:no-repeat; height: 100%; position: absolute;}
+
+.wyd { }
+.right-text { width: 50%; float: left; font-size: 14px; color: #3c4568; line-height: 24px; margin-bottom: 20px;}

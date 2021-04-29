@@ -1,0 +1,36 @@
+<view class="bg">
+    <navBar title='完善个人信息' background='rgba(0,0,0,0)' color='#fff' iconTheme='white' back="{{true}}" bindback="goback"></navBar>
+    <scroll-view scroll-y class="content" style="height:{{height}}">
+        <view class="avatar-wrap">
+            <image class="avatar" src="{{avatarurl}}" mode="widthFix" />
+        </view>
+        <view class="group">
+            <view class="label">姓名：</view>
+            <input value="{{name}}" placeholder-class="place-holder" placeholder="请输入姓名" data-type="name" bindinput="onChange" maxlength="20" />
+        </view>
+        <view class="group">
+            <view class="label">身份证号：</view>
+            <input value="{{idnumber}}" placeholder-class="place-holder" placeholder="请输入身份证号" data-type="idnumber" bindinput="onChange" maxlength="18" />
+        </view>
+        <view class="group">
+            <view class="label">入党时间：</view>
+            <picker class="picker" mode="date" value="{{joinpartytime}}" start="1921-07-01" data-type="joinpartytime" bindchange="onChange">
+                <view class="place-holder" wx:if="{{!joinpartytime}}">请选择入党时间</view>
+                <view class="picker-value" wx:else>{{joinpartytime}}</view>
+            </picker>
+        </view>
+        <view class="group">
+            <view class="label">学历：</view>
+            <input value="{{education}}" placeholder-class="place-holder" placeholder="请输入学历" data-type="education" bindinput="onChange" maxlength="10" />
+        </view>
+        <view class="group">
+            <view class="label">职称：</view>
+            <input value="{{jobtitle}}" placeholder-class="place-holder" placeholder="请输入职称" data-type="jobtitle" bindinput="onChange" maxlength="20" />
+        </view>
+        <view class="group">
+            <view class="label">简历：</view>
+            <input value="{{resume}}" placeholder-class="place-holder" placeholder="请输入简历" data-type="resume" bindinput="onChange" />
+        </view>
+        <button class="btn" bindtap="submit">{{buttonText}}</button>
+    </scroll-view> 
+</view>

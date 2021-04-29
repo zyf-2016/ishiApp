@@ -1,0 +1,18 @@
+<view class="my-welcome-content" style="padding-top: {{height}}" >
+    <view class="nav">
+        <navBar title='易络客党支部' background='rgba(0,0,0,0)' color='#fff' iconTheme='white' back="{{true}}" bindback="goback"></navBar>
+    </view>
+    <view class="my-welcome-block">
+        <view class="my-welcome-get">
+            <view class="my-list-none">
+                <image class="none-pic" mode="widthFix" src="../../images/list-none-pic.png"></image>
+                您还没有登录信息
+                <view>请授权登录后访问</view>
+            </view>
+            <view class="btn-default-color get-btn">
+                <button type="primary" wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 去授权 </button>
+                <button type="primary" wx:else bindgetuserinfo="getUserInfo"> 去授权 </button>
+            </view>
+        </view>
+    </view>
+</view>

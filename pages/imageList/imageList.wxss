@@ -1,0 +1,47 @@
+page {
+	background: #f2f3f4;
+}
+.page {
+	width: 100vw;
+	box-sizing: border-box;
+	padding: 35rpx 35rpx 0;
+}
+.list:after {
+	content: "";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	height: 0;
+	font-size:0;
+}
+.item {
+	margin-bottom: 35rpx;
+	background: #fff;
+}
+.item:nth-of-type(2n-1) {
+	float: left;
+}
+.item:nth-of-type(2n) {
+	float: right;
+}
+.thumb {
+	width: 330rpx;
+	height: 186rpx;
+}
+.info {
+	padding: 24rpx 24rpx 34rpx;
+}
+.date {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.title {
+	margin-top: 12rpx;
+	font-size: 30rpx;
+	color: #666;
+}
+.text {
+	color: #b1b1b1;
+	font-size: 24rpx;
+}

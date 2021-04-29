@@ -1,0 +1,34 @@
+<view class="page">
+	<view class="nav">
+		<navBar title='党费管理' background='rgba(0,0,0,0)' color='#fff' iconTheme='white' back="{{true}}" bindback="goback"></navBar>
+	</view>
+	<view class="header">
+		<canvas type="2d" class="draw-area" id="myCanvas"></canvas>
+		<view class="header-content">
+			<text class="header-name">易络客党支部</text>
+			<text class="header-progress">{{info.rate}}%</text>
+			<text class="header-text" wx:if="{{info.unpay || info.uninit}}">
+				<block wx:if="{{info.unpay}}">{{info.unpay}}名党员需缴党费,</block>
+				<block wx:if="{{info.uninit}}">{{info.uninit}}名新党员未指定额度</block>
+			</text>
+			<text class="header-text" wx:else>所有成员已缴党费</text>
+			<text class="header-text">已缴党费{{info.total}}元</text>
+		</view>
+	</view>
+	<view class="tab-list">
+		<view class="{{index === currentIndex ? 'tab-item active' : 'tab-item'}}" wx:for="{{tabs}}" wx:key="index" data-index="{{index}}" bindtap="tabChange">{{item}}</view>
+	</view>
+	<view class="member-list" wx:if="{{list[currentIndex].length}}">
+		<view class="list-item" bindtap="goToDetail" wx:for="{{list[currentIndex]}}" wx:key="index" data-params="{{item}}">
+			<image class="list-avatar" src="{{item.avatarurl}}" mode="aspectFill" />
+			<view class="list-info">
+				<text class="list-name">{{item.name}}</text>
+				<text class="list-date" wx:if="{{item.duesend}}">缴纳至{{item.duesend}}</text>
+			</view>
+			<view class="list-state error" wx:if="{{item.state == '已欠费'}}">{{item.state}}</view>
+			<view class="list-state" wx:if="{{item.state == '已缴纳'}}">{{item.state}}</view>
+			<view class="list-state info" wx:if="{{item.state == '未指定'}}">{{item.state}}</view>
+		</view>
+	</view>
+	<van-empty description="空空如也~" wx:else />
+</view>

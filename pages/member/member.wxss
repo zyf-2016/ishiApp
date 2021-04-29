@@ -1,0 +1,142 @@
+/* pages/member/member.wxss */
+.header {
+	height: 100rpx;
+	border-bottom: 1rpx solid #b1b1b1;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 36rpx;
+	font-weight: bold;
+}
+.title {
+	line-height: 100rpx;
+	color: #b1b1b1;
+	flex: 1;
+	text-align: center;
+	position: relative;
+}
+.title-text {
+	display: inline-block;
+	height: 100rpx;
+	padding: 0 20rpx;
+}
+.title-text.active {
+	position: relative;
+	color: #000;
+}
+.title-count {
+	position: absolute;
+	width: 40rpx;
+	height: 40rpx;
+	line-height: 40rpx;
+	background: #bc1e2d;
+	color: #fff;
+	font-size: 24rpx;
+	border-radius: 50%;
+	top: 20rpx;
+	right: 80rpx;
+}
+.title-text.active:after {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 8rpx;
+	background: #000;
+	bottom: -8rpx;
+	left: 0;
+}
+.top-wrap {
+	padding: 34rpx;
+}
+.top-title {
+	color: #333;
+	font-size: 32rpx;
+	margin-bottom: 30rpx;
+	font-weight: bold;
+}
+.top-scroll {
+	width: 534rpx;
+	white-space: nowrap;
+	align-items:flex-start
+}
+.top-avatar {
+	width: 90rpx;
+	height: 90rpx;
+	border-radius: 50%;
+}
+.top-add {
+	width: 90rpx;
+	height: 90rpx;
+	border-radius: 50%;
+	border: 1rpx solid #e4e4e4;
+	text-align: center;
+	line-height: 80rpx;
+	font-size: 60rpx;
+	color: #e4e4e4;
+}
+.top-item + .top-item {
+	margin-left: 40rpx;
+}
+.top-text {
+	font-size: 26rpx;
+	color: #333;
+	line-height: 1;
+	margin-top: 10rpx;
+}
+
+.search-box {
+	background: #fff;
+}
+.search {
+	width: 700rpx;
+	height: 75rpx;
+	margin: 35rpx auto;
+	padding: 0 40rpx;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: #f6f6f6;
+	border-radius: 40rpx;
+}
+input {
+	padding-left: 16rpx;
+	flex: 1;
+	height: 100%;
+}
+.place-holder {
+	color: #b1b1b1;
+	font-size: 30rpx;
+}
+.van-cell-inline {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.van-cell {
+	padding: 20rpx 60rpx !important;
+}
+.van-avatar {
+	width: 80rpx;
+	height: 80rpx;
+	border-radius: 10rpx;
+	margin-right: 20rpx;
+}
+.van-cell-text {
+	color: #b1b1b1;
+}
+.van-index-anchor {
+	background: #f6f6f6 !important;
+	color: #b1b1b1 !important;
+	padding: 0 25rpx !important;
+}
+.van-index-bar__index {
+	color: #a3a4a6 !important;
+}
+.count {
+	color: #b1b1b1;
+	text-align: center;
+	margin: 20rpx 0;
+}

@@ -1,0 +1,16 @@
+<!--pages/video1/video1.wxml-->
+<view class="video-layer" wx:if="{{url}}">
+	<view class="layer-video-box">
+		<cover-image class="icon-play" src="../../images/icon-play.png" bindtap="videoPlay" hidden="{{isPlay}}" />
+		<video class="myvideo" id="myVideo" src="{{url}}" object-fit="cover" show-fullscreen-btn="{{false}}" show-center-play-btn="{{false}}" show-play-btn="{{false}}" bindended="ended"></video>
+	</view>
+	<button open-type="share" class="btn share">
+		<image src="../../images/icon-share.png" mode="aspectFill" />
+		<text>分享</text>
+	</button>
+	<button class="btn save" bindtap="download">
+		<image src="../../images/icon-save.png" mode="aspectFill" />
+		<text>保存</text>
+	</button>
+</view>
+<van-empty description="空空如也~" wx:if="{{!url}}" />

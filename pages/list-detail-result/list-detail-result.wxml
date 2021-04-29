@@ -1,0 +1,16 @@
+<view class="bjj">
+    <view class="yuu">
+        <view class="zql">正确率：{{rate}}%</view>
+        <view class="zql">答错题数：{{count}} 题</view>
+    </view>
+    <view class="btn-default-color btn-block" style="padding:0 0 0 7px;">
+        <view>
+            <navigator open-type='switchTab' hoverClass="none" url="/pages/index/index">
+                <image class="banner-bg" mode="widthFix" src="https://api.shi1.cn/open/oss/wc.png" mode="widthFix"></image>
+            </navigator>
+        </view>
+    </view>
+    <navigator class="fui-cell" hoverClass="none" url="/pages/list-detail/list-detail">
+        <image class="banner-bg" mode="widthFix" src="https://api.shi1.cn/open/oss/zl.png" mode="widthFix"></image>
+    </navigator>
+</view>

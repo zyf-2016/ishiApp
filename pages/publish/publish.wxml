@@ -1,0 +1,27 @@
+<view class="page">
+	<navBar title='发布活动' background='#bd232f' color='#fff' iconTheme='white' back="{{true}}" bindback="goback"></navBar>
+	<view class="form-item">
+		<input class="field" placeholder-class="place-holder" placeholder="活动标题(最多15字)" maxlength="15" value="{{title}}" data-type="title" bindchange="onChange" />
+	</view>
+	<view class="form-item">
+		 <picker class="picker" mode="date" value="{{date}}" data-type="date" bindchange="onChange" >
+			<view class="place-picker" wx:if="{{!date}}">活动日期</view>
+			<view class="place-picker" wx:else>{{date}}</view>
+		</picker>
+	</view>
+	<view class="form-item">
+		<picker class="picker" mode="time" value="{{time}}" data-type="time" bindchange="onChange" >
+			<view class="place-picker" wx:if="{{!time}}">活动时间</view>
+			<view class="place-picker" wx:else>{{time}}</view>
+		</picker>
+	</view>
+	<view class="form-item">
+		<input class="field" placeholder-class="place-holder" placeholder="活动地点(最多14字)" maxlength="14" value="{{address}}" data-type="address" bindchange="onChange" />
+	</view>
+	<view class="title">活动图片</view>
+	<view class="upload-area">
+		<image style="width:100%;height:100%;" src="{{tempFilePaths}}" mode="aspectFill" wx:if="{{tempFilePaths}}" />
+		<image class="icon" src="https://api.shi1.cn/open/oss/icon-upload.png" mode="aspectFill" bindtap="upload" />
+	</view>
+	<button class="btn" bindtap="submit">提交</button>
+</view>

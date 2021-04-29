@@ -1,0 +1,63 @@
+<view class="page">
+	<navBar title='个人详情' background='rgba(0,0,0,0)' color='#fff' iconTheme='white' back="{{true}}" bindback="goback"></navBar>
+	<view class="header"></view>
+
+	<view class="wrapper" style="height:{{scrollHeihgt}}">
+		<view class="top-content" style="height:{{height}}">
+			<view class="header-content">
+				<view class="userinfo">
+					<image class="avatar" src="{{avatar}}" mode="aspectFill" />
+					<text class="username">{{name}}</text>
+					<view class="header-btn" bindtap="goToSet" wx:if="{{!isSelf}}">额度修改</view>
+				</view>
+				<view class="header-info">
+					<text class="header-text">每月额度</text>
+					<text class="header-text">{{price}}</text>
+				</view>
+				<view class="header-info">
+					<text class="header-text">党费状态</text>
+					<text class="header-text success" wx:if="{{date}}">已缴至{{date}}</text>
+					<text class="header-text" wx:elif="{{state === '未指定'}}">未指定</text>
+					<text class="header-text error" wx:elif="{{state === '已欠费'}}">已欠费</text>
+				</view>
+			</view>
+		</view>
+
+		<view class="fee-area" wx:if="{{!isSelf}}">
+			<view class="fee-list">
+				<view class="{{currentIndex == index ? 'fee-item active' : 'fee-item'}}" wx:for="{{monthList}}" wx:key="index" data-index="{{index}}" bindtap="onMonthChange">
+					<view class="fee-date">{{item}}个月</view>
+					<view class="fee-price">￥{{priceList[index]}}</view>
+				</view>
+			</view>
+			<button class="fee-btn" bindtap="add">添加党费</button>
+		</view>
+
+		<view class="record-area" style="margin-top:{{isSelf?'100rpx':'0'}}">
+			<view class="record-title">缴费历史</view>
+			<block wx:if="{{historyList.length}}">
+				<view class="record-item" wx:for="{{historyList}}" wx:key="index">
+					<text class="record-date">{{item.paytime}}</text>
+					<view class="record-detail">
+						<text>{{item.duescount}}个月 党费</text>
+						<text>{{item.duesamount}}</text>
+					</view>
+					<view class="record-range">有效期: {{item.duesbegin}} 至 {{item.duesend}}</view>
+				</view>
+			</block>
+			<van-empty description="暂无缴费记录" wx:else />
+		</view>
+	</view>
+
+	<view class="layer" wx:if="{{showLayer}}">
+		<view class="content">
+			<view class="msg">
+				<text>{{title}}</text>
+			</view>
+			<view class="btn-wrap">
+				<button class="button no" bindtap="cancel">否</button>
+				<button class="button yes" bindtap="confirm">是</button>
+			</view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,17 @@
+{
+  "name": "governmentAPP",
+  "version": "1.0.0",
+  "description": "",
+  "main": "2704D0009E6C3BDF4162B80737F3A436.js",
+  "dependencies": {
+    "@vant/weapp": "^1.6.8",
+    "wl-pinyin": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

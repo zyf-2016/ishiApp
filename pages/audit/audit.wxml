@@ -1,0 +1,45 @@
+<!--pages/audit/audit.wxml-->
+<view class="page">
+	<navBar title='成员信息' background='#bd232f' color='#fff' iconTheme='white' back="{{true}}" bindback="goback"></navBar>
+	<image class="avatar" src="{{avatarurl}}" mode="widthFix" />
+	<view class="group">
+		<view class="title">姓名：</view>
+		<view class="info">{{name}}</view>
+	</view>
+	<view class="group">
+		<view class="title">身份证号码：</view>
+		<view class="info">{{idnumber}}</view>
+	</view>
+	<view class="group">
+		<view class="title">入党时间：</view>
+		<view class="info">{{joinpartytime}}</view>
+	</view>
+	<view class="group">
+		<view class="title">学历：</view>
+		<view class="info">{{education}}</view>
+	</view>
+	<view class="group">
+		<view class="title">职称：</view>
+		<view class="info">{{jobtitle}}</view>
+	</view>
+	<view class="group">
+		<view class="title">简历</view>
+		<view class="auto-line">
+			<text >{{resume}}</text>
+		</view>
+	</view>
+	<block wx:if="{{!readonly}}">
+		<button class="btn active" bindtap="agree">通过</button>
+		<button class="btn" bindtap="reject">拒绝</button>
+	</block>
+
+	<view class="layer" wx:if="{{showLayer}}">
+		<view class="content">
+			<view class="msg">{{title}}</view>
+			<view class="btn-wrap">
+				<button class="button no" bindtap="cancel">否</button>
+				<button class="button yes" bindtap="confirm">是</button>
+			</view>
+		</view>
+	</view>
+</view>

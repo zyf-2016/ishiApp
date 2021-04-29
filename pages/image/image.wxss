@@ -1,0 +1,42 @@
+.video-layer {
+	background: #000;
+	height: 100vh;
+	box-sizing: border-box;
+	padding: 300rpx 20rpx 0;
+}
+.layer-video-box {
+	position: relative;
+}
+.thumb {
+	width: 710rpx;
+	height: 436rpx;
+}
+.btn {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	width: 64rpx;
+	height: 114rpx;
+	padding: 0;
+	background: none;
+	margin-left: 616rpx;
+}
+.btn image {
+	width: 64rpx;
+	height: 64rpx;
+}
+.btn text {
+	display: block;
+	color: #fff;
+	font-size: 24rpx;
+	height: 50rpx;
+	line-height: 50rpx;
+	text-align: center;
+}
+.share {
+	margin-top: 110rpx;
+}
+.save {
+	margin-top: 50rpx;
+}

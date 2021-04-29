@@ -1,0 +1,27 @@
+<view class="page">
+	<navBar title='工会委员' background='#bd232f' color='#fff' iconTheme='white' back="{{true}}" bindback="goback"></navBar>
+	<view class="list">
+		<view class="title">职位</view>
+    <view class="wrap">
+      <picker range="{{jobList}}" value="{{value}}" bindchange="bindPickerChange">
+        <view class="placeholder">{{jobList[value] || '请选择职位'}}</view>
+      </picker>
+    </view>
+    <view class="title" style="margin-top:20rpx;">成员</view>
+    <view class="wrap">
+      <view class="placeholder" bindtap="goToList">{{name || '请指定成员'}}</view>
+    </view>
+	</view>
+  <button class="btn del" bindtap="delete" wx:if="{{showDelBtn}}">删除</button>
+  <button class="btn" bindtap="submit">确定</button>
+
+  <view class="layer" wx:if="{{showLayer}}">
+		<view class="content">
+			<view class="msg">确定删除吗</view>
+			<view class="btn-wrap">
+				<button class="button no" bindtap="cancel">否</button>
+				<button class="button yes" bindtap="confirm">是</button>
+			</view>
+		</view>
+	</view>
+</view>

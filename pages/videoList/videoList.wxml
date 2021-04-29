@@ -1,0 +1,18 @@
+<!--pages/video/video.wxml-->
+<view class="page">
+	<navBar title='宣誓留念' background='#bd232f' color='#fff' iconTheme='white' back="{{true}}" bindback="goback"></navBar>
+	<view class="list" wx:for="{{videoList}}" wx:if="{{videoList.length}}">
+		<view class="video-box">
+			<cover-image class="icon-play" src="../../images/icon-play.png" data-url="{{item.fileurl}}" bindtap="videoPlay" />
+			<video class="video" src="{{item.fileurl}}" object-fit="cover" show-fullscreen-btn="{{false}}" show-center-play-btn="{{false}}" show-play-btn="{{false}}"></video>
+		</view>
+		<view class="info">
+			<view class="title">{{item.centent}}</view>
+			<view class="date">
+				<text class="text">{{item.week}}</text>
+				<text class="text">{{item.date}}</text>
+			</view>
+		</view>
+	</view>
+	<van-empty description="空空如也~" wx:if="{{!videoList.length}}" />
+</view>

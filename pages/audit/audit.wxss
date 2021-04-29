@@ -1,0 +1,104 @@
+/* pages/audit/audit.wxss */
+.page {
+	padding: 0 60rpx;
+	background: #fff;
+}
+.avatar {
+	display: block;
+	width: 210rpx;
+	margin: 35rpx auto 90rpx;
+	border-radius: 30rpx;
+}
+.group {
+	margin-bottom: 24rpx;
+}
+.title {
+	color: #808080;
+	font-size: 34rpx;
+}
+.info {
+	height: 120rpx;
+	line-height: 120rpx;
+	color: #cacaca;
+	font-size: 30rpx;
+	border-bottom: 1rpx solid #e4e4e4;
+}
+.auto-line {
+	min-height: 120rpx;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	color: #cacaca;
+	font-size: 30rpx;
+	border-bottom: 1rpx solid #e4e4e4;
+}
+.auto-line text {
+	padding: 20rpx 0;
+}
+.btn {
+	height: 70rpx;
+	line-height: 70rpx;
+	color: #cacaca;
+	border: 1rpx solid #c4c4c4;
+	background: #fff;
+	font-weight: bold;
+	box-sizing: border-box;
+	border-radius: 40rpx;
+}
+.btn + .btn {
+	margin-bottom: 80rpx;
+}
+.btn.active {
+	margin: 80rpx 0 25rpx;
+	background: #bc1e2d;
+	color: #fff;
+	border-color: #bc1e2d;
+}
+.layer {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	z-index: 9;
+	left: 0;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(0,0,0,.5);
+}
+.content {
+	width: 550rpx;
+	background: #fff;
+	border-radius: 50rpx;
+	overflow: hidden;
+}
+.msg {
+	height: 200rpx;
+	line-height: 200rpx;
+	text-align: center;
+	color: #bc1e2d;
+	font-size: 36rpx;
+	font-weight: bold;
+}
+.btn-wrap {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 32rpx;
+}
+.button {
+	width: 50%;
+	height: 100rpx;
+	line-height: 100rpx;
+	box-sizing: border-box;
+	color: #bc1e2d;
+	border-top: 1rpx solid #bc1e2d;
+	border-radius: 0;
+}
+.button:after {
+	border-radius: 0;
+}
+.yes {
+	background: #bc1e2d;
+	color: #fff;
+}

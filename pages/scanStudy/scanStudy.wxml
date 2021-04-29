@@ -1,0 +1,105 @@
+<view class="nav">
+	<navBar title='党建答题' background="{{gameStart?'#bd232f':'rgba(0,0,0,0)'}}" color='#fff' iconTheme='white' home="{{true}}" bindhome="goHome"></navBar>
+</view>
+
+<view class="page" wx:if="{{!gameStart}}">
+	<!-- 答题开始前 -->
+	<view class="content" wx:if="{{state == 1}}">
+		<view class="tip">等待其他成员加入...</view>
+		<view class="tip">等待中...<text class="time">{{time}}</text>s</view>
+		<image class="avatar" src="{{avatar}}" mode="aspectFill" />
+		<view class="wrap">
+			<view class="list" wx:if="{{userList.length}}">
+				<image class="thumb" src="{{item.avatarurl}}" mode="aspectFill" wx:for="{{userList}}" wx:key="index" wx:if="{{index < 4}}" />
+			</view>
+			<text class="text" wx:if="{{userList.length}}">共{{userList.length}}人</text>
+		</view>
+	</view>
+	<!-- 答题中 -->
+	<view wx:elif="{{state == 2}}">
+		<view class="user-info">
+			<view class="flex-between">
+				<view class="flex-start">
+				<image class="user-avatar" src="{{avatar}}" mode="aspectFill"></image>
+				<text class="user-name">{{username}}</text>
+				</view>
+				<text class="user-text">当前排名</text>
+			</view>
+			<view class="flex-between" style="margin-top: 10rpx;padding: 0 10rpx;">
+				<view class="user-item">
+				<text class="user-num">{{score}}</text>/100
+				</view>
+				<view class="user-item">
+				<text class="user-num">{{rankNo}}</text>/{{userList.length}}
+				</view>
+			</view>
+			<view class="progress">
+				<view class="draw-circle"></view>
+				<canvas type="2d" class="draw-area" id="myCanvas"></canvas>
+				<text>{{countDownTime}}</text>
+			</view>
+		</view>
+		<swiper bindchange="onChange" class="swiper-wrap" current="{{currentIndex}}">
+			<swiper-item class="test-area" catchtouchmove="catchTouchMove" wx:for="{{list}}" wx:key="index">
+				<scroll-view scroll-y class="scroll-wrap">
+					<view class="test-title">
+						{{index+1}}、{{item.question}}
+					</view>
+					<view class="test-select">
+						<view class="test-item" wx:for="{{item.answerList}}" wx:for-item="data" wx:for-index="i" wx:key="i" data-index="{{i}}" data-answer="{{item.answer}}" bindtap="handleSelect" wx:if="{{data}}">
+							<image class="item-icon" src="../../images/icon-0{{i+1}}.png" mode="aspectFill" />
+							<text class="item-text">{{data}}</text>
+							<image class="icon-right" src="../../images/dui.png" mode="aspectFit" wx:if="{{isRight && selectedIndex == i}}" />
+							<image class="icon-error" src="../../images/cuo.png" mode="aspectFit" wx:if="{{isError && selectedIndex == i}}" />
+						</view>
+					</view>
+					<image src="../../images/bg0.jpg" mode="aspectFill" class="test-bg" />
+				</scroll-view>
+			</swiper-item>
+		</swiper>
+	</view>
+	<!-- 答题结束 -->
+	<view wx:else class="result-panel">
+		<image class="user-img" src="{{avatar}}" mode="aspectFill" />
+		<view class="user-nick">{{username}}</view>
+		<view class="result-wrap">
+			<view class="result-area">
+				<view class="result-title">{{self.rankno == 1?'恭喜获胜！':'再接再厉！'}}</view>
+				<view class="result-header flex-start">
+					<view style="width:45%;text-align:center">排名</view>
+					<view style="width:40%;text-align:center;">正确数/总题数</view>
+					<view style="width:15%;text-align:right;">总分</view>
+				</view>
+				<view class="result-item flex-start" wx:for="{{rankList}}" wx:key="index" wx:if="{{index<3}}">
+					<view class="flex-start" style="width:45%">
+							<image src="../../images/icon-{{index+1}}.png" class="item-sort" mode="aspectFill" />
+							<image src="{{item.avatarurl}}" class="item-avatar" mode="aspectFill" />
+							<text>{{item.name}}</text>
+					</view>
+					<view style="width:40%;text-align:center;">{{item.score/10}}/10</view>
+					<view style="width:15%;text-align:right;">{{item.score}}分</view>
+				</view>
+				<view class="result-item flex-start abs">
+					<view class="flex-start" style="width:45%">
+							<image src="../../images/icon-{{self.rankno}}.png" wx:if="{{self.rankno<4}}" class="item-sort" mode="aspectFill" />
+							<view style="position:relative;" wx:else>
+								<image src="../../images/icon-rank.png" class="item-sort" mode="aspectFill" />
+								<text class="rank-num">{{self.rankno}}</text>
+							</view>
+							<image src="{{self.avatarurl}}" class="item-avatar" mode="aspectFill" />
+							<text>{{self.name}}</text>
+					</view>
+					<view style="width:40%;text-align:center;">{{self.score/10}}/10</view>
+					<view style="width:15%;text-align:right;">{{self.score}}分</view>
+				</view>
+			</view>
+			
+		</view>
+		<image class="back-btn" src="../../images/back.png" mode="aspectFill" bindtap="goHome" />
+	</view>
+	<view class="mask" wx:if="{{showLayer}}">
+		<image src="../../images/award-img{{self.rankno == 1?'1':'2'}}.png" class="award-img" mode="widthFix" />
+	</view>
+</view>
+<van-empty description="{{msg}}" wx:else />
+

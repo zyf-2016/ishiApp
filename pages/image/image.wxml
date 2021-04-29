@@ -1,0 +1,15 @@
+<!--pages/video1/video1.wxml-->
+<view class="video-layer" wx:if="{{url}}">
+	<view class="layer-video-box">
+		<image class="thumb" src="{{url}}" mode="aspectFill" />
+	</view>
+	<button open-type="share" class="btn share">
+		<image src="../../images/icon-share.png" mode="aspectFill" />
+		<text>分享</text>
+	</button>
+	<button class="btn save" bindtap="download">
+		<image src="../../images/icon-save.png" mode="aspectFill" />
+		<text>保存</text>
+	</button>
+</view>
+<van-empty description="空空如也~" wx:if="{{!url}}" />

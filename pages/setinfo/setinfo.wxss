@@ -1,0 +1,47 @@
+.content {
+    width: 100%;
+    padding: 0 62rpx;
+    box-sizing: border-box;
+    color: #fff;
+}
+.avatar-wrap {
+    padding-top: 72rpx;
+}
+.avatar {
+    display: block;
+    width: 240rpx;
+    margin: 0 auto 100rpx;
+    border-radius: 50%;
+}
+.group {
+    margin-bottom: 30rpx;
+}
+.label {
+    font-size: 32rpx;
+}
+input, .picker {
+    height: 76rpx;
+    font-size: 32rpx;
+    border-bottom: 1rpx solid rgba(255, 255, 255, .8);
+}
+.place-holder {
+    color: rgba(255, 255, 255, .8);
+    font-size: 32rpx;
+    height: 76rpx;
+    line-height: 76rpx;
+}
+.picker-value {
+    font-size: 32rpx;
+    height: 76rpx;
+    line-height: 76rpx;
+}
+.btn {
+    height: 96rpx;
+    background: #fff;
+    font-size: 40rpx;
+    font-weight: bold;
+    color: #c6161d;
+    border-radius: 60rpx;
+    margin-bottom: 90rpx;
+    margin-top: 40rpx;
+}

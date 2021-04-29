@@ -1,0 +1,102 @@
+/* pages/index/index.wxss */
+.top {
+	height: 420rpx;
+	padding-top: 220rpx;
+	padding-left: 46rpx;
+	background-image: url(https://api.shi1.cn/open/oss/bg.jpg);
+	background-size: cover;
+	background-position: left top;
+	background-repeat: no-repeat;
+	position: relative;
+	box-sizing: border-box;
+}
+.username {
+	color: #fff;
+	font-size: 60rpx;
+}
+.content {
+	width: 100%;
+	height: calc(100vh - 420rpx);
+	background: #f2f3f4;
+	padding: 0 30rpx;
+	box-sizing: border-box;
+}
+.title {
+	margin: 0 40rpx 35rpx;
+	padding-top: 35rpx;
+}
+.icon-msg {
+	width: 34rpx;
+	height: 35rpx;
+}
+.title-text {
+	font-size: 40rpx;
+	color: #bc1e2d;
+	font-weight: bold;
+	padding-left: 20rpx;
+}
+.msg-item {
+	width: 330rpx;
+	height: 190rpx;
+	background: #fff;
+	border-radius: 20rpx;
+	color: #666;
+	padding-top: 34rpx;
+	box-sizing: border-box;
+	box-shadow: 0 0 8px rgba(178, 178, 178, 0.3);
+}
+.msg-title {
+	border-left: 10rpx solid #bc1e2d;
+	height: 30rpx;
+	line-height: 30rpx;
+	margin-bottom: 16rpx;
+	padding-left: 20rpx;
+	font-size: 28rpx;
+	font-weight: bold;
+}
+.msg-info {
+	font-size: 24rpx;
+	padding-left: 30rpx;
+}
+
+.activity-area {
+	color: #bc1e2d;
+	background: #fff;
+	border-radius: 20rpx;
+	width: 690rpx;
+	margin-top: 35rpx;
+	box-shadow: 0 0 8px rgba(178, 178, 178, 0.3);
+}
+.activity-title {
+	font-size: 28rpx;
+	font-weight: bold;
+	padding: 20rpx 0 30rpx 30rpx;
+}
+.activity-count {
+	width: 40rpx;
+	height: 40rpx;
+	line-height: 40rpx;
+	border-radius: 50%;
+	background: #bc1e2d;
+	color: #fff;
+	font-size: 24rpx;
+	text-align: center;
+	position: absolute;
+	right: -20rpx;
+	top: -20rpx;
+}
+.activity-list {
+	width: 470rpx;
+	margin: 0 auto;
+	padding-bottom: 20rpx;
+}
+.activity-item {
+	position: relative;
+}
+.activity-icon {
+	width: 46rpx;
+	height: 46rpx;
+}
+.activity-type {
+	font-size: 24rpx;
+}

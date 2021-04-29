@@ -1,0 +1,22 @@
+<!--pages/park/park.wxml-->
+<navBar title='三会一课' background='#bd232f' color='#fff' iconTheme='white' back="{{true}}" bindback="goback"></navBar>
+<view class="list">
+		<view class="list-item" wx:for="{{list}}" wx:key="index" data-item="{{item}}" bindtap="goToDetail">
+			<view class="list-top">
+				<image class="list-thumb" src="{{item.image}}" mode="aspectFill" />
+				<view class="list-info">
+					<view class="list-title">{{item.title}}</view>
+					<view class="list-date">
+						<view class="list-group">
+							<image class="list-icon" src="../../images/icon-day.png" mode="aspectFill" />
+							<text class="list-text">{{item.time}}</text>
+						</view>
+						<view class="list-group">
+							<image class="list-icon" src="../../images/icon-address.png" mode="aspectFill" />
+							<text class="list-text">{{item.site}}</text>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>

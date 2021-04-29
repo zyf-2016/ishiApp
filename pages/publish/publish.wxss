@@ -1,0 +1,66 @@
+.page {
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	padding: 30rpx 72rpx;
+}
+.form-item {
+	width: 100%;
+	height: 100rpx;
+	border-bottom: 1rpx solid #c4c4c4;
+}
+.field {
+	height: 100%;
+	padding-top: 50rpx;
+	font-size: 24rpx;
+	color: #b1b1b1;
+	box-sizing: border-box;
+}
+.picker {
+	width: 100%;
+	height: 100%;
+}
+.place-holder {
+	color: #b1b1b1;
+	font-size: 24rpx;
+}
+.place-picker {
+	height: 100rpx;
+	padding-top: 50rpx;
+	line-height: 50rpx;
+	color: #b1b1b1;
+	font-size: 24rpx;
+	box-sizing: border-box;
+}
+.title {
+	color: #b1b1b1;
+	font-size: 24rpx;
+	margin: 190rpx 0 50rpx;
+}
+.upload-area {
+	position: relative;
+	width: 610rpx;
+	height: 280rpx;
+	border: 1rpx dashed #bc1e2d;
+	padding: 1rpx;
+	box-sizing: border-box;
+}
+.icon {
+	width: 61rpx;
+	height: 61rpx;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.btn {
+	width: 100%;
+	height: 70rpx;
+	line-height: 70rpx;
+	background: #bc1e2d;
+	color: #fff;
+	font-size: 30rpx;
+	font-weight: bold;
+	border-radius: 40rpx;
+	margin-top: 100rpx;
+}

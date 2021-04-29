@@ -1,0 +1,20 @@
+<view class="page">
+	<navBar title='活动管理' background='#bd232f' color='#fff' iconTheme='white' back="{{true}}" bindback="goback"></navBar>
+	<view class="list" wx:if="{{list.length}}">
+		<view class="list-item" wx:for="{{list}}" wx:key="index" data-activityid="{{item.activityid}}" bindtap="goToDetail">
+			<image class="list-thumb" src="{{item.image}}" mode="aspectFill" />
+			<image class="list-box" src="https://api.shi1.cn/open/oss/box.png" />
+			<view class="list-info">
+				<view class="list-title">{{item.title}}</view>
+				<view class="list-date">
+					<text class="list-text">{{item.site}}</text>
+				</view>
+					<text class="list-text">{{item.time}}</text>
+			</view>
+		</view>
+	</view>
+	<van-empty description="空空如也~" wx:else />
+	<view class="bottom">
+		<image class="btn" src="https://api.shi1.cn/open/oss/btn-publish.png" mode="aspectFill" bindtap="add" />
+	</view>
+</view>

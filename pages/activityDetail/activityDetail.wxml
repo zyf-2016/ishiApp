@@ -1,0 +1,52 @@
+<view class="page">
+	<navBar title='活动查看' background='#bd232f' color='#fff' iconTheme='white' back="{{!isShare}}" home="{{isShare}}" bindhome="gohome" bindback="goback"></navBar>
+	<block wx:if="{{valid}}">
+		<image class="banner" src="{{info.image}}" mode="aspectFill" />
+		<view class="wrapper">
+			<view class="title">{{info.title}}</view>
+			<view class="content-info">
+				<view class="info">
+					<image class="icon-info" src="../../images/icon-menu.png" mode="aspectFill" />
+					<text class="info-text">{{info.date}}</text>
+				</view>
+				<view class="info">
+					<image class="icon-info" src="../../images/icon-clock.png" mode="aspectFill" />
+					<text class="info-text">{{info.day}}</text>
+				</view>
+				<view class="info">
+					<image class="icon-info" src="../../images/icon-address.png" mode="aspectFill" />
+					<text class="info-text">{{info.site}}</text>
+				</view>
+			</view>
+			<block wx:if="{{!isShare}}">
+				<view class="main-title">成员签到</view>
+				<view class="list">
+					<view class="list-item" wx:for="{{info.member}}" wx:key="index">
+						<text class="list-name">{{item.name}}</text>
+						<button class="list-btn" wx:if="{{item.sign == 0}}" data-name="{{item.name}}" data-openid="{{item.openid}}" bindtap="sign">签到</button>
+						<button class="list-btn" disabled="{{true}}" wx:else>已签到</button>
+					</view>
+				</view>
+			</block>
+
+			<view class="footer">
+				<view class="del" bindtap="handleDelete" wx:if="{{!isShare}}">
+					<image class="icon-del" src="../../images/icon-del.png" mode="aspectFill" />
+					<text class="del-text">删除</text>
+				</view>
+				<button class="btn-share" open-type="share">分享</button>
+			</view>
+		</view>
+		<!-- 弹窗 -->
+		<view class="layer" wx:if="{{showLayer}}">
+			<view class="content">
+				<view class="msg">{{title}}</view>
+				<view class="btn-wrap">
+					<button class="button no" bindtap="cancel">否</button>
+					<button class="button yes" bindtap="confirm">是</button>
+				</view>
+			</view>
+		</view>
+	</block>
+	<van-empty description="来晚了，活动已结束" wx:else />
+</view>

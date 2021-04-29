@@ -1,0 +1,51 @@
+<view class="page">
+	<view class="nav">
+		<navBar title='额度指定' background='rgba(0,0,0,0)' color='#fff' iconTheme='white' back="{{true}}" bindback="goback"></navBar>
+	</view>
+	<view class="header">
+		<view class="content">
+			<view class="userinfo">
+				<image class="avatar" src="{{info.avatarurl}}" mode="aspectFill" />
+				<text class="username">{{info.name}}</text>
+			</view>
+			<view class="form-item">
+				<text class="label">设置额度</text>
+				<view class="wrap">
+					<input class="field" type="number" value="{{count}}" data-name="count" bindchange="change" />
+				</view>
+			</view>
+			<view class="form-item">
+				<text class="label">起始时间</text>
+				<view class="wrap">
+					<picker class="picker" mode="date" fields="month" value="{{date}}" data-name="date" bindchange="change">
+						<view class="group">
+							<image class="icon-day" src="../../images/icon-time.png" mode="aspectFill" />
+							<view class="picker-val">{{date}}</view>
+						</view>
+					</picker>
+				</view>
+			</view>
+		</view>
+	</view>
+	<button class="btn" bindtap="add">添加额度</button>
+	<view class="layer" wx:if="{{showLayer}}">
+		<view class="layer-content">
+			<view class="layer-title">设定党费额度</view>
+			<view class="layer-main">
+				<view class="layer-info">
+					<text>党费额度：</text>
+					<text class="layer-val">{{count}}元</text>
+				</view>
+				<view class="layer-info" style="margin-bottom:30rpx;">
+					<text>起始时间：</text>
+					<text class="layer-val">{{date}}</text>
+				</view>
+			</view>
+			<view class="layer-tip">是否准确无误？</view>
+			<view class="btn-wrap">
+				<button class="button no" bindtap="cancel">否</button>
+				<button class="button yes" bindtap="confirm">是</button>
+			</view>
+		</view>
+	</view>
+</view>

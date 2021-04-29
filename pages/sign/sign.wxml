@@ -1,0 +1,35 @@
+<view class="page">
+	<navBar title='签到活动' background='#bd232f' color='#fff' iconTheme='white' back="{{true}}" bindback="goback"></navBar>
+	<view class="header">
+		<view class="title">
+			<text class="{{currentIndex == 0 ? 'title-text active':'title-text'}}" data-index="0" bindtap="tabChange">待签到</text>
+		</view>
+		<view class="title">
+			<text class="{{currentIndex == 1 ? 'title-text active':'title-text'}}" data-index="1" bindtap="tabChange">历史活动</text>
+		</view>
+	</view>
+	<view class="list" wx:if="{{list.length}}">
+		<view class="list-item" wx:for="{{list}}" wx:key="index">
+			<view class="list-top">
+				<image class="list-thumb" src="{{item.image}}" mode="aspectFill" />
+				<view class="list-info">
+					<view class="list-title">{{item.title}}</view>
+					<view class="list-date">
+						<view class="list-group">
+							<image class="list-icon" src="../../images/icon-day.png" mode="aspectFill" />
+							<text class="list-text">{{item.time}}</text>
+						</view>
+						<view class="list-group">
+							<image class="list-icon" src="../../images/icon-address.png" mode="aspectFill" />
+							<text class="list-text">{{item.site}}</text>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="list-bottom">
+				<button class="list-btn" disabled="{{true}}">{{currentIndex==0?'未签到':'已签到'}}</button>
+			</view>
+		</view>
+	</view>
+	<van-empty description="{{index == 0?'暂无待签到活动':'暂无活动记录'}}" wx:else />
+</view>

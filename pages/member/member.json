@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-index-bar": "@vant/weapp/index-bar/index",
+    "van-index-anchor": "@vant/weapp/index-anchor/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-empty": "@vant/weapp/empty/index"
+  },
+  "navigationBarTextStyle": "white",
+  "navigationStyle": "custom"
+}

@@ -1,0 +1,76 @@
+<!--pages/member/member.wxml-->
+<view class="page">
+	<navBar title='成员管理' background='#bd232f' color='#fff' iconTheme='white' back="{{true}}" bindback="goback"></navBar>
+	<view class="header">
+		<view class="title">
+			<text class="{{currentIndex == 0 ? 'title-text active':'title-text'}}" data-index="0" bindtap="tabChange">全部</text>
+		</view>
+		<view class="title">
+			<text class="{{currentIndex == 1 ? 'title-text active':'title-text'}}" data-index="1" bindtap="tabChange">待审核</text>
+			<view class="title-count" wx:if="{{count > 0}}">{{count}}</view>
+		</view>
+	</view>
+	<view class="search-box" wx:if="{{currentIndex == 0}}">
+		<view class="top-wrap">
+			<view class="top-title">支部委员</view>
+			<view class="flex-start" style="align-items:flex-start;">
+				<block wx:if="{{leaderList.length}}">
+					<scroll-view class="flex-start top-scroll" scroll-x enable-flex="true" wx:if="{{leaderList.length>=4}}">
+						<view class="top-item" wx:for="{{leaderList}}" wx:key="keyid" bindtap="goToUpdate" data-job="{{item.committee}}" data-name="{{item.name}}" data-keyid="{{item.keyid}}">
+							<view class="flex-col">
+								<image src="{{item.avatarurl}}" mode="aspectFill" class="top-avatar"></image>
+								<view class="top-text">{{item.committee}}</view>
+								<view class="top-text">{{item.name}}</view>
+							</view>
+						</view>
+					</scroll-view>
+					<view class="flex-start top-scroll" style="width:unset;" wx:else>
+						<view class="top-item" wx:for="{{leaderList}}" wx:key="keyid" bindtap="goToUpdate" data-job="{{item.committee}}" data-name="{{item.name}}" data-keyid="{{item.keyid}}">
+							<view class="flex-col">
+								<image src="{{item.avatarurl}}" mode="aspectFill" class="top-avatar"></image>
+								<view class="top-text">{{item.committee}}</view>
+								<view class="top-text">{{item.name}}</view>
+							</view>
+						</view>
+					</view>
+				</block>
+				<view class="top-item" style="margin-left:{{leaderList.length?'40rpx':'0'}};" bindtap="addLeader">
+					<view class="flex-col">
+						<view class="top-add">+</view>
+						<view class="top-text">添加</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="search">
+			<image src="../../images/search.png" mode="aspectFill" style="width:40rpx;height:40rpx;" />
+			<input type="text" placeholder-class="place-holder" placeholder="搜索" bindinput="search" />
+		</view>
+	</view>
+	<van-index-bar highlight-color="#c6161d" wx:if="{{employeeNameList && currentIndex == 0}}">
+		<view wx:for="{{employeeNameList}}" wx:for-index="key" wx:for-item="value" wx:key="key">
+			<van-index-anchor index="{{key}}"  wx:if="{{value.length}}"></van-index-anchor>
+			<!-- <van-cell title="{{item.name}}" wx:for="{{value}}"  wx:if="{{value.length}}" /> -->
+			<van-cell wx:for="{{value}}"  wx:if="{{value.length}}" wx:key="index" data-openid="{{item.openid}}" bindtap="handleClick">
+				<view slot="title" class="van-cell-inline">
+					<image class="van-avatar" src="{{item.avatarurl}}" mode="aspectFill" />
+					<text class="van-cell-text">{{item.name}}</text>
+				</view>
+			</van-cell>
+		</view>
+	</van-index-bar>
+	<van-empty description="空空如也~" wx:if="{{!employeeNameList && currentIndex == 0}}" />
+
+	<view class="member-list" wx:if="{{list.length && currentIndex == 1}}">
+		<van-cell wx:for="{{list}}" bindclick="onClick" data-openid="{{item.openid}}">
+			<view slot="title" class="van-cell-inline">
+				<image class="van-avatar" src="{{item.avatarurl}}" mode="aspectFill" />
+				<text class="van-cell-text">{{item.name}}</text>
+			</view>
+		</van-cell>
+	</view>
+	<van-empty description="空空如也~" wx:if="{{!list.length && currentIndex == 1}}" />
+
+	<view class="count" wx:if="{{currentIndex == 0 && memberCount > 0}}">共{{memberCount}}名成员</view>
+	<view class="count" wx:if="{{currentIndex == 1 && memberCount > 0}}">共{{memberCount}}名成员待审核</view>
+</view>

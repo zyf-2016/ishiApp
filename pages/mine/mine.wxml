@@ -1,0 +1,88 @@
+<view class="bg">
+	<navBar title='我的' background='rgba(0,0,0,0)' color='#fff' iconTheme='white'></navBar>
+	<view class="wrap">
+		<view class="flex-start">
+			<image class="avatar" src="{{avatarUrl}}" mode="aspect" wx:if="{{avatarUrl}}" />
+			<view class="detault-avatar" wx:else><open-data type="userAvatarUrl"></open-data></view>
+			<view class="flex-col userinfo">
+				<text class="nickname" wx:if="{{nickname}}">{{nickname}}</text>
+				<view class="nickname" wx:else><open-data type="userNickName"></open-data></view>
+				<text class="state" wx:if="{{state == 0}}">未加入组织</text>
+				<text class="state" wx:if="{{state == 1}}" style="color:#ea984c;">待组织审核</text>
+				<text class="state" wx:if="{{state == 2}}">易络客党支部</text>
+				<text class="state" wx:if="{{state == 3}}" style="color:#ea984c;">未通过审核</text>
+			</view>
+		</view>
+		<image class="info-btn" src="../../images/info-view.png" mode="widthFix" data-path="/pages/setinfo/setinfo" bindtap="navigate" wx:if="{{audit == 1}}" />
+		<image class="info-btn" src="../../images/info-btn.png" mode="widthFix" data-path="/pages/setinfo/setinfo" bindtap="navigate" wx:else />
+	</view>
+	<view class="body" style="height: {{height}}">
+		<view class="content">
+			<view class="box">
+				<view class="title">我的活动</view>
+				<view class="item-wrap flex-between">
+					<view class="flex-col" data-path="/pages/sign/sign" bindtap="navigate">
+						<image class="item-icon" src="https://api.shi1.cn/open/oss/icon-sign.png" mode="aspectFill" />
+						<text class="item-text">活动签到</text>
+					</view>
+					<view class="flex-col" hover-class="none" data-path="/pages/videoList/videoList" bindtap="navigate">
+						<image class="item-icon" src="https://api.shi1.cn/open/oss/icon-video.png" mode="aspectFill" />
+						<text class="item-text">宣誓留念</text>
+					</view>
+					<view class="flex-col" hover-class="none" data-path="/pages/imageList/imageList" bindtap="navigate">
+						<image class="item-icon" src="https://api.shi1.cn/open/oss/icon-img.png" mode="aspectFill" />
+						<text class="item-text">党建留念</text>
+					</view>
+				</view>
+			</view>
+			<view class="box">
+				<view class="title flex-between">我的党费<view class="all" bindtap="goToDetail">查看全部 ></view></view>
+				<view class="detail flex-between">
+					<view class="flex-col detail-info">
+						<!-- <text class="fee">余额</text> -->
+						<block wx:if="{{detailInfo.state == '已欠费'}}">
+							<text class="error">{{detailInfo.surplus || detailInfo.state}}</text>
+							<text class="text-right">-</text>
+						</block>
+						<block wx:elif="{{detailInfo.state == '未指定'}}">
+							<text class="error">{{detailInfo.surplus || detailInfo.state}}</text>
+							<text class="text-right">-</text>
+						</block>
+						<block wx:else>
+							<text class="success">已缴费</text>
+							<text class="success">{{detailInfo.surplus || detailInfo.state}}</text>
+						</block>
+					</view>
+					<view class="flex-col detail-info">
+						<text class="text-left">每月额度</text>
+						<text class="text-right">{{detailInfo.dueslevel || '-'}}</text>
+					</view>
+					<!-- <view class="flex-between detail-info">
+						<view class="text-left"><text class="text-error">欠费</text>/<text class="text-success">缴费</text></view>
+						<text class="text-right">-</text>
+					</view> -->
+					<view class="flex-col detail-info">
+						<text class="text-left">有效期</text>
+						<text class="text-right">{{detailInfo.duesend || '-'}}</text>
+					</view>
+				</view>
+			</view>
+			<!-- <view class="box">
+				<view class="list-item">
+					<navigator class="list-link flex-start" hover-class="none" url="">
+						<image class="list-icon" src="https://api.shi1.cn/open/oss/icon-set.png" mode="aspectFill" />
+						<text class="list-text">设置</text>
+						<text class="list-arrow">></text>
+					</navigator>
+				</view>
+				<view class="list-item">
+					<navigator class="list-link flex-start" hover-class="none" url="">
+						<image class="list-icon" src="https://api.shi1.cn/open/oss/icon-info.png" mode="aspectFill" />
+						<text class="list-text">反馈</text>
+						<text class="list-arrow">></text>
+					</navigator>
+				</view>
+			</view> -->
+		</view>
+	</view>
+</view>

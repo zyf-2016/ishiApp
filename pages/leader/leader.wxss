@@ -1,0 +1,88 @@
+.page {
+  background: #f2f3f4;
+  height: 100vh;
+}
+.title {
+  padding-left: 40rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1rpx solid #f2f3f4;
+  background: #fff;
+}
+.wrap {
+  height: 100rpx;
+  background: #fff;
+  padding-left: 40rpx;
+}
+.placeholder {
+  color: #ccc;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.btn {
+  width: 680rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-radius: 10rpx;
+  background: #bc1e2d;
+  color: #fff;
+  font-size: 36rpx;
+  font-weight: bold;
+  position: fixed;
+  bottom: 200rpx;
+  left: 35rpx;
+}
+.btn.del {
+  background: #b1b1b1;
+  color: #fff;
+  bottom: 330rpx;
+}
+
+.layer {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	z-index: 9;
+	left: 0;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(0,0,0,.5);
+}
+.content {
+	width: 550rpx;
+	background: #fff;
+	border-radius: 50rpx;
+	overflow: hidden;
+}
+.msg {
+	height: 200rpx;
+	line-height: 200rpx;
+	text-align: center;
+	color: #bc1e2d;
+	font-size: 36rpx;
+	font-weight: bold;
+}
+.btn-wrap {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 32rpx;
+}
+.button {
+	width: 50%;
+	height: 100rpx;
+	line-height: 100rpx;
+	box-sizing: border-box;
+	color: #bc1e2d;
+	border-top: 1rpx solid #bc1e2d;
+	border-radius: 0;
+}
+.button:after {
+	border-radius: 0;
+}
+.yes {
+	background: #bc1e2d;
+	color: #fff;
+}
