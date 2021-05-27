@@ -8,6 +8,7 @@ Page({
     role: 0,
     count: 0
   },
+  // onLoad
   onLoad: function (options) {
     if(app.globalData.userInfo.nickname) {
       this.setData({
