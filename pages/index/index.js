@@ -8,9 +8,8 @@ Page({
     role: 0,
     count: 0
   },
-  // onLoad
   onLoad: function (options) {
-    if(app.globalData.userInfo.nickname) {
+    if(app.globalData.userInfo.nickname) { // 用户已授权
       this.setData({
         username: app.globalData.userInfo.nickname,
         role: app.globalData.userInfo.role,
